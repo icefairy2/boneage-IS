@@ -65,7 +65,9 @@ errors = []
 for i in range(0, n_test):
     errors.append(target_test[i] - y_rbf[i])
 
-plt.plot(range(0, n_test), errors, 'RBF')
+plt.plot(range(0, n_test), errors)
+plt.ylabel('error')
+plt.title('RBF')
 plt.show()
 
 cv_results = cross_val_score(svr_rbf, data, target, scoring='neg_mean_absolute_error', cv=10)
