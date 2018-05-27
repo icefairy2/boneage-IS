@@ -47,7 +47,7 @@ age_overview_df = dataset.groupby(['age_class',
                                                              ).reset_index(drop = True)
 
 # show an example image from each subgroup
-fig, m_axs = plt.subplots( age_groups//2, 4, figsize = (12, 3*age_groups))
+fig, m_axs = plt.subplots( age_groups//2, 4, figsize = (12, age_groups))
 for c_ax, (_, c_row) in zip(m_axs.flatten(),
                             age_overview_df.sort_values(['age_class', 'gender']).iterrows()):
     c_ax.imshow(imread(c_row['path']),
